@@ -12,14 +12,12 @@ class CommentForm extends React.Component {
     }
     formSubmitFnc(event){
         event.preventDefault();
-        this.props
-            .addComment({text: this.state.formInputcomment, user: this.state.formInputuser});
+        let commentData = {text: this.state.formInputcomment, user: this.state.formInputuser};
+        this.props.addComment(commentData);
         this.setState({formInputuser: 'Visitor', formInputcomment: ''});
     }
   render() {
     return (
-      //Here we call the props function in arrow function so we wont evoke them. 
-      //we can also use a function formSubmitFnc
       <form action="#" className="comment_form" onSubmit={this.formSubmitFnc}>
         <div className="form-group">
           <input

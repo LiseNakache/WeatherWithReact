@@ -25978,7 +25978,7 @@ var WeatherApp = function (_React$Component) {
     key: 'onSubmitSearchForm',
     value: function onSubmitSearchForm(string) {
       if (this.search(string.location.name, this.state.cards)) {
-        alert('Allready found!');
+        alert('Already found!');
         return;
       }
 
@@ -26063,7 +26063,7 @@ var WeatherListBox = function WeatherListBox(props) {
   });
   return _react2.default.createElement(
     'div',
-    { className: 'equalHeightWrap flexWrap' },
+    { className: 'equalHeightWrap' },
     boxes
   );
 };
@@ -26081,8 +26081,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
@@ -26093,74 +26091,47 @@ var _CommentsListBox2 = _interopRequireDefault(_CommentsListBox);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var WeatherBox = function (_React$Component) {
-  _inherits(WeatherBox, _React$Component);
-
-  function WeatherBox(props) {
-    _classCallCheck(this, WeatherBox);
-
-    //bind this to functions
-    var _this = _possibleConstructorReturn(this, (WeatherBox.__proto__ || Object.getPrototypeOf(WeatherBox)).call(this, props));
-
-    _this.deleteBoxFnc = _this.deleteBoxFnc.bind(_this);
-    return _this;
-  }
-
-  _createClass(WeatherBox, [{
-    key: 'deleteBoxFnc',
-    value: function deleteBoxFnc() {
-      this.props.removeWeatherBox(this.props.item); //Using a function to call function in props
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var dataItem = this.props.item;
-      return _react2.default.createElement(
+var WeatherListBox = function WeatherListBox(props) {
+  var dataItem = props.item;
+  return _react2.default.createElement(
+    'div',
+    { className: 'equalHeightBox' },
+    _react2.default.createElement(
+      'div',
+      { className: 'media' },
+      _react2.default.createElement('span', { className: 'glyphicon glyphicon-trash pull-right',
+        onClick: function onClick() {
+          return props.removeWeatherBox(props.item);
+        } }),
+      _react2.default.createElement(
         'div',
-        { className: 'equalHMV eq' },
+        { className: 'media-left' },
+        _react2.default.createElement('img', { src: dataItem.icon, alt: dataItem.name, className: 'media-object', style: { width: 60 } })
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'media-body' },
         _react2.default.createElement(
-          'div',
-          { className: 'media' },
-          _react2.default.createElement('span', { className: 'glyphicon glyphicon-trash pull-right', onClick: this.deleteBoxFnc }),
-          _react2.default.createElement(
-            'div',
-            { className: 'media-left' },
-            _react2.default.createElement('img', { src: dataItem.icon, alt: dataItem.name, className: 'media-object', style: { width: 60 } })
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'media-body' },
-            _react2.default.createElement(
-              'h4',
-              { className: 'media-heading' },
-              dataItem.name
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              dataItem.text,
-              '- ',
-              dataItem.feelslike_c,
-              ' \xA0| C'
-            )
-          )
+          'h4',
+          { className: 'media-heading' },
+          dataItem.name
         ),
-        _react2.default.createElement(_CommentsListBox2.default, { comments: dataItem.comments }),
-        _react2.default.createElement('hr', null)
-      );
-    }
-  }]);
+        _react2.default.createElement(
+          'p',
+          null,
+          dataItem.text,
+          '- ',
+          dataItem.feelslike_c,
+          ' \xA0| C'
+        )
+      )
+    ),
+    _react2.default.createElement(_CommentsListBox2.default, { comments: dataItem.comments }),
+    _react2.default.createElement('hr', null)
+  );
+};
 
-  return WeatherBox;
-}(_react2.default.Component);
-
-exports.default = WeatherBox;
+exports.default = WeatherListBox;
 
 /***/ }),
 /* 229 */
@@ -26306,7 +26277,8 @@ var CommentForm = function (_React$Component) {
     key: 'formSubmitFnc',
     value: function formSubmitFnc(event) {
       event.preventDefault();
-      this.props.addComment({ text: this.state.formInputcomment, user: this.state.formInputuser });
+      var commentData = { text: this.state.formInputcomment, user: this.state.formInputuser };
+      this.props.addComment(commentData);
       this.setState({ formInputuser: 'Visitor', formInputcomment: '' });
     }
   }, {
@@ -26314,39 +26286,35 @@ var CommentForm = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      return (
-        //Here we call the props function in arrow function so we wont evoke them. 
-        //we can also use a function formSubmitFnc
+      return _react2.default.createElement(
+        'form',
+        { action: '#', className: 'comment_form', onSubmit: this.formSubmitFnc },
         _react2.default.createElement(
-          'form',
-          { action: '#', className: 'comment_form', onSubmit: this.formSubmitFnc },
-          _react2.default.createElement(
-            'div',
-            { className: 'form-group' },
-            _react2.default.createElement('input', {
-              type: 'text',
-              className: 'form-control',
-              placeholder: 'Enter user',
-              value: this.state.formInputuser,
-              onChange: function onChange(event) {
-                return _this2.setState({ formInputuser: event.target.value });
-              },
-              required: true }),
-            _react2.default.createElement('input', {
-              type: 'text',
-              className: 'form-control',
-              placeholder: 'Enter comment',
-              value: this.state.formInputcomment,
-              onChange: function onChange(event) {
-                return _this2.setState({ formInputcomment: event.target.value });
-              },
-              required: true })
-          ),
-          _react2.default.createElement(
-            'button',
-            { type: 'submit', className: 'btn btn-primary commentSend' },
-            'Submit'
-          )
+          'div',
+          { className: 'form-group' },
+          _react2.default.createElement('input', {
+            type: 'text',
+            className: 'form-control',
+            placeholder: 'Enter user',
+            value: this.state.formInputuser,
+            onChange: function onChange(event) {
+              return _this2.setState({ formInputuser: event.target.value });
+            },
+            required: true }),
+          _react2.default.createElement('input', {
+            type: 'text',
+            className: 'form-control',
+            placeholder: 'Enter comment',
+            value: this.state.formInputcomment,
+            onChange: function onChange(event) {
+              return _this2.setState({ formInputcomment: event.target.value });
+            },
+            required: true })
+        ),
+        _react2.default.createElement(
+          'button',
+          { type: 'submit', className: 'btn btn-primary commentSend' },
+          'Submit'
         )
       );
     }

@@ -1,21 +1,13 @@
 import React from 'react';
 import CommentsListBox from './CommentsListBox';
 
-class WeatherBox extends React.Component { 
-  constructor(props) {
-        super(props);
-        //bind this to functions
-        this.deleteBoxFnc = this.deleteBoxFnc.bind(this);
-    }
-   deleteBoxFnc(){
-        this.props.removeWeatherBox(this.props.item);//Using a function to call function in props
-    }
-  render() {
-    const dataItem = this.props.item;
+const WeatherListBox = (props) => {
+  const dataItem = props.item;
     return (
-       <div className="equalHMV eq">
+       <div className="equalHeightBox">
         <div className="media">
-          <span className="glyphicon glyphicon-trash pull-right" onClick={this.deleteBoxFnc} ></span>
+          <span className="glyphicon glyphicon-trash pull-right" 
+          onClick={()=>props.removeWeatherBox(props.item)} ></span>
           <div className="media-left">
             <img src={dataItem.icon} alt={dataItem.name} className="media-object" style={{ width: 60}}/></div>
           <div className="media-body">
@@ -27,7 +19,6 @@ class WeatherBox extends React.Component {
         <hr/>
       </div>
     )
-  }
-}
+};
 
-export default WeatherBox;
+export default WeatherListBox;

@@ -9,7 +9,7 @@ const WeatherListBox = (props) => {
       removeWeatherBox={props.removeWeatherBox}
       item={item}/>)
   return (
-    <div className="equalHeightWrap flexWrap">
+    <div className="equalHeightWrap">
       {boxes}
     </div>
   );

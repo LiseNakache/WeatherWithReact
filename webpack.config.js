@@ -1,4 +1,4 @@
-const path = require('path');// lets define to absolute path
+const path = require('path'); // lets define to absolute path
 
 module.exports = {
   // the entry file for the bundle
@@ -9,10 +9,14 @@ module.exports = {
     path: path.join(__dirname, '/client/dist/js'),
     filename: 'app.js'
   },
+  watchOptions: {
+    aggregateTimeout: 300,
+    poll: 1000
+  },
 
   module: {
-    // apply loaders to files that meet given conditions
-    // were using babel-loader with presets for react and es2015
+    // apply loaders to files that meet given conditions were using babel-loader
+    // with presets for react and es2015
     loaders: [
       {
         test: /\.js?$/,
@@ -24,7 +28,7 @@ module.exports = {
       }
     ]
   },
-  devtool: "source-map",//Lets get a better error handling - we can see all orrors in the termianl
+  devtool: "source-map", //Lets get a better error handling - we can see all orrors in the termianl
   // start Webpack in a watch mode, so Webpack will rebuild the bundle on changes
   watch: true
 };
