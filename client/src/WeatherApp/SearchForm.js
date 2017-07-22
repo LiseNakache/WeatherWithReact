@@ -10,16 +10,8 @@ class SearchForm extends React.Component {
     }
     handleSubmit(event){
         event.preventDefault();
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET',`http://api.apixu.com/v1/current.json?key=5f1979d6812b411491d164417171806&q=${this.state.city}`);
-        xhr.addEventListener('load',()=>{
-            this.props.onSubmitSearchForm(JSON.parse(xhr.responseText));
-            this.setState({city: ''});
-        })
-        xhr.addEventListener('error',()=>{
-            console.log('error');
-        })
-        xhr.send();
+        this.props.onSubmitSearchForm(this.state.city);
+        this.setState({city: ''});
     }
 
     render() {

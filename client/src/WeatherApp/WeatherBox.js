@@ -7,7 +7,7 @@ const WeatherListBox = (props) => {
        <div className="equalHeightBox">
         <div className="media">
           <span className="glyphicon glyphicon-trash pull-right" 
-          onClick={()=>props.removeWeatherBox(props.item)} ></span>
+          onClick={()=>props.removeWeatherBox(props.id)} ></span>
           <div className="media-left">
             <img src={dataItem.icon} alt={dataItem.name} className="media-object" style={{ width: 60}}/></div>
           <div className="media-body">
@@ -15,7 +15,7 @@ const WeatherListBox = (props) => {
             <p>{dataItem.text}- {dataItem.feelslike_c} &nbsp;| C</p>
           </div>
         </div>
-        <CommentsListBox comments={dataItem.comments}/>
+        <CommentsListBox comments={dataItem.comments} id={props.id}/>
         <hr/>
       </div>
     )

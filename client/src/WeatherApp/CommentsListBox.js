@@ -1,36 +1,34 @@
 import React from 'react';
 import CommentForm from './CommentForm';
 import CommentBox from './CommentBox';
+import { connect } from 'react-redux';
+import { fetchWeather,deleteWeather ,addWeatherComment} from "../actions/weatherActions"
 
+@connect((store) => {
+  return {
+    boxes: store.weather.boxes,
+  };
+})
 class CommentsListBox extends React.Component {
   constructor(props) {
         super(props);
         //bind this to functions
         this.addComment = this.addComment.bind(this);
         this.deleteComment = this.deleteComment.bind(this);
-        //Declare local state
-        this.state = {
-            comments: props.comments
-        }
     }
     addComment(str){
-        this.setState(prevState => ({
-            comments: prevState
-                .comments
-                .concat(str)
-        }));
+        this.props.dispatch(addWeatherComment(this.props.id,str))
     };
     deleteComment(str){
-        const newState = this.state.comments;
-        if (newState.indexOf(str) > -1) {
-            newState.splice(newState.indexOf(str), 1);
-            this.setState({comments: newState})
-        }
+         this.props.dispatch(deleteWeatherComment(this.props.id,str))
     };
 
   render() {
+    console.log('====================================');
+    console.log(this.props);
+    console.log('====================================');
     const comments = this
-      .state
+      .props
       .comments
       .map((item, index) => <CommentBox
         item={item}
