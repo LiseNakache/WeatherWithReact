@@ -46,7 +46,7 @@ class WeatherApp extends React.Component {
   };
 
   removeWeatherBox(string) {
-    const newState = this.state.cards;
+    const newState = this.state.cards.slice();
     if (newState.indexOf(string) > -1) {
       newState.splice(newState.indexOf(string), 1);
       this.setState({cards: newState})

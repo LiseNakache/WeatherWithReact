@@ -1,7 +1,7 @@
 import React from 'react';
 import WeatherApp from './WeatherApp';
-import About from './weatherApp/common/About';
-import Page404 from './weatherApp/common/404';
+import About from './WeatherApp/common/About';
+import Page404 from './WeatherApp/common/404';
 import {Switch, Route, Redirect} from 'react-router-dom';
 
 const Routesss = () => (

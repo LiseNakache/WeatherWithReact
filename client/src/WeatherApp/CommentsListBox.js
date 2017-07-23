@@ -21,7 +21,7 @@ class CommentsListBox extends React.Component {
         }));
     };
     deleteComment(str){
-        const newState = this.state.comments;
+        const newState = this.state.comments.slice();
         if (newState.indexOf(str) > -1) {
             newState.splice(newState.indexOf(str), 1);
             this.setState({comments: newState})

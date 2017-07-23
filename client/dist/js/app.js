@@ -11308,14 +11308,6 @@ var _Routes2 = _interopRequireDefault(_Routes);
 
 var _reactRouterDom = __webpack_require__(56);
 
-var _TodoList = __webpack_require__(235);
-
-var _TodoList2 = _interopRequireDefault(_TodoList);
-
-var _TodoStore = __webpack_require__(236);
-
-var _TodoStore2 = _interopRequireDefault(_TodoStore);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -25888,15 +25880,15 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _weatherApp = __webpack_require__(226);
+var _WeatherApp = __webpack_require__(226);
 
-var _weatherApp2 = _interopRequireDefault(_weatherApp);
+var _WeatherApp2 = _interopRequireDefault(_WeatherApp);
 
-var _About = __webpack_require__(233);
+var _About = __webpack_require__(235);
 
 var _About2 = _interopRequireDefault(_About);
 
-var _ = __webpack_require__(234);
+var _ = __webpack_require__(236);
 
 var _2 = _interopRequireDefault(_);
 
@@ -25911,7 +25903,7 @@ var Routesss = function Routesss() {
         _react2.default.createElement(
             _reactRouterDom.Switch,
             null,
-            _react2.default.createElement(_reactRouterDom.Route, { name: 'home', exact: true, path: '/', component: _weatherApp2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { name: 'home', exact: true, path: '/', component: _WeatherApp2.default }),
             _react2.default.createElement(_reactRouterDom.Route, { name: 'about', exact: true, path: '/about', component: _About2.default }),
             _react2.default.createElement(_reactRouterDom.Route, { path: '*', component: _2.default })
         )
@@ -26007,7 +25999,7 @@ var WeatherApp = function (_React$Component) {
   }, {
     key: 'removeWeatherBox',
     value: function removeWeatherBox(string) {
-      var newState = this.state.cards;
+      var newState = this.state.cards.slice();
       if (newState.indexOf(string) > -1) {
         newState.splice(newState.indexOf(string), 1);
         this.setState({ cards: newState });
@@ -26206,7 +26198,7 @@ var CommentsListBox = function (_React$Component) {
     }, {
         key: 'deleteComment',
         value: function deleteComment(str) {
-            var newState = this.state.comments;
+            var newState = this.state.comments.slice();
             if (newState.indexOf(str) > -1) {
                 newState.splice(newState.indexOf(str), 1);
                 this.setState({ comments: newState });
@@ -26469,7 +26461,9 @@ var SearchForm = function (_React$Component) {
 exports.default = SearchForm;
 
 /***/ }),
-/* 233 */
+/* 233 */,
+/* 234 */,
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26519,7 +26513,7 @@ var About = function (_React$Component) {
 exports.default = About;
 
 /***/ }),
-/* 234 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26567,18 +26561,6 @@ var App = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = App;
-
-/***/ }),
-/* 235 */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/Omi/Desktop/eleven/react/demo/client/src/TodoList.js'\n    at Error (native)");
-
-/***/ }),
-/* 236 */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/Omi/Desktop/eleven/react/demo/client/src/TodoStore.js'\n    at Error (native)");
 
 /***/ })
 /******/ ]);
