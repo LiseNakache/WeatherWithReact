@@ -2,7 +2,7 @@ const path = require('path'); // lets define to absolute path
 
 module.exports = {
   // the entry file for the bundle
-  entry: path.join(__dirname, '/client/src/App.js'),
+  entry: path.join(__dirname, '/client/src/index.js'),
 
   // the bundle file we will get in the result
   output: {
@@ -13,7 +13,6 @@ module.exports = {
     aggregateTimeout: 300,
     poll: 1000
   },
-
   module: {
     // apply loaders to files that meet given conditions were using babel-loader
     // with presets for react and es2015

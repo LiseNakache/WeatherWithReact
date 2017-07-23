@@ -11302,19 +11302,11 @@ var _Header = __webpack_require__(197);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _Routes = __webpack_require__(225);
+var _routes = __webpack_require__(235);
 
-var _Routes2 = _interopRequireDefault(_Routes);
+var _routes2 = _interopRequireDefault(_routes);
 
 var _reactRouterDom = __webpack_require__(56);
-
-var _TodoList = __webpack_require__(235);
-
-var _TodoList2 = _interopRequireDefault(_TodoList);
-
-var _TodoStore = __webpack_require__(236);
-
-var _TodoStore2 = _interopRequireDefault(_TodoStore);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -11346,7 +11338,7 @@ var App = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'container' },
-            _react2.default.createElement(_Routes2.default, null)
+            _react2.default.createElement(_routes2.default, null)
           )
         )
       );
@@ -25874,53 +25866,7 @@ NavLink.defaultProps = {
 
 
 /***/ }),
-/* 225 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(4);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _weatherApp = __webpack_require__(226);
-
-var _weatherApp2 = _interopRequireDefault(_weatherApp);
-
-var _About = __webpack_require__(233);
-
-var _About2 = _interopRequireDefault(_About);
-
-var _ = __webpack_require__(234);
-
-var _2 = _interopRequireDefault(_);
-
-var _reactRouterDom = __webpack_require__(56);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Routesss = function Routesss() {
-    return _react2.default.createElement(
-        'div',
-        { className: 'container' },
-        _react2.default.createElement(
-            _reactRouterDom.Switch,
-            null,
-            _react2.default.createElement(_reactRouterDom.Route, { name: 'home', exact: true, path: '/', component: _weatherApp2.default }),
-            _react2.default.createElement(_reactRouterDom.Route, { name: 'about', exact: true, path: '/about', component: _About2.default }),
-            _react2.default.createElement(_reactRouterDom.Route, { path: '*', component: _2.default })
-        )
-    );
-};
-
-exports.default = Routesss;
-
-/***/ }),
+/* 225 */,
 /* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -26570,15 +26516,50 @@ exports.default = App;
 
 /***/ }),
 /* 235 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/Omi/Desktop/eleven/react/demo/client/src/TodoList.js'\n    at Error (native)");
+"use strict";
 
-/***/ }),
-/* 236 */
-/***/ (function(module, exports) {
 
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/Omi/Desktop/eleven/react/demo/client/src/TodoStore.js'\n    at Error (native)");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _App = __webpack_require__(226);
+
+var _App2 = _interopRequireDefault(_App);
+
+var _About = __webpack_require__(233);
+
+var _About2 = _interopRequireDefault(_About);
+
+var _ = __webpack_require__(234);
+
+var _2 = _interopRequireDefault(_);
+
+var _reactRouterDom = __webpack_require__(56);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Routesss = function Routesss() {
+    return _react2.default.createElement(
+        'div',
+        { className: 'container' },
+        _react2.default.createElement(
+            _reactRouterDom.Switch,
+            null,
+            _react2.default.createElement(_reactRouterDom.Route, { name: 'home', exact: true, path: '/', component: _App2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { name: 'about', exact: true, path: '/about', component: _About2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { path: '*', component: _2.default })
+        )
+    );
+};
+
+exports.default = Routesss;
 
 /***/ })
 /******/ ]);

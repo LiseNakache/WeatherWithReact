@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import Header from './WeatherApp/common/Header';
-import Routesss from './Routes';
+import Routes from './routes';
 import {BrowserRouter} from 'react-router-dom';
-
-import TodoList from './TodoList';
-import TodoStore from './TodoStore';
 
 class App extends React.Component {
   render() {
@@ -14,7 +11,7 @@ class App extends React.Component {
         <div>
           <Header/>
           <div className="container">
-            <Routesss/>
+            <Routes/>
           </div>
         </div>
       </BrowserRouter>
