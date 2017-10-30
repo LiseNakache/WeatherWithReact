@@ -1,12 +1,12 @@
 import React from 'react';
-import weatherApp from './weatherApp';
-import Page404 from './weatherApp/common/404';
+import MainApp from './';
+import Page404 from './common/404';
 import {Switch, Route, Redirect} from 'react-router-dom';
 
 const Routes = () => (
     <div className="container">
         <Switch>
-            <Route name="home" exact path='/' component={weatherApp} />
+            <Route name="home" exact path='/' component={MainApp} />
             <Route path="*" component={Page404}/>
         </Switch>
     </div>
