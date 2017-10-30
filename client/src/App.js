@@ -4,7 +4,7 @@ import Header from './common/Header';
 import Routes from './Routes';
 import {BrowserRouter} from 'react-router-dom';
 
-class App extends React.Component {
+class AppWrapper extends React.Component {
   render() {
     return (
       <BrowserRouter>
@@ -21,4 +21,4 @@ class App extends React.Component {
 }
 
 ReactDom.render(
-  <App/>, document.getElementById('react-app'));
+  <AppWrapper/>, document.getElementById('react-app'));
