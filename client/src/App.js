@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import Header from './WeatherApp/common/Header';
-import Routesss from './Routes';
+import Header from './common/Header';
+import Routes from './Routes';
 import {BrowserRouter} from 'react-router-dom';
 
 class App extends React.Component {
@@ -11,7 +11,7 @@ class App extends React.Component {
         <div>
           <Header/>
           <div className="container">
-            <Routesss/>
+            <Routes/>
           </div>
         </div>
       </BrowserRouter>
