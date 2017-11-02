@@ -1,0 +1,89 @@
+*{box-sizing : border-box;
+    font-family: 'Lato', sans-serif;}
+
+    body {
+      background-image: url("https://ak9.picdn.net/shutterstock/videos/11441438/thumb/1.jpg");
+      background-position: absolute;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+
+
+/* .equalHMV{
+    border : 1px solid blue;
+    
+} */
+
+.media-object{
+    width: 10%;
+}
+
+.equalHMV {
+    white-space: nowrap;
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    transition: all 0.3s ease-in-out;
+    margin : 10px;
+    padding : 10px;
+  }
+  
+  .delete{
+    position : absolute;
+    right : 10px;
+    font-size: small;
+    color: blue;
+    cursor: pointer;
+    line-height: 4;
+  }
+
+.deleteComment{
+  font-size: small;
+  color: blue;
+  margin-left : 10px;
+  cursor: pointer;
+}
+
+.bnt-comment{
+  margin-top: 10px;
+  color: blue;
+  font-weight: bold;
+  height : 20px;
+  width : 40%
+}
+
+.form-control-comment{
+  margin : 3px;
+  height : 20px;
+  width : 40%
+}
+
+.form-control-city{
+width : 50%;
+height: 30px;
+}
+
+.btn-city {
+  height: 30px;
+}
+
+.input-group-city{
+  display: flex;
+  margin : auto;
+  justify-content: center;
+}
+
+/* .equalHMV{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  margin :20px;
+  border-radius : 20px;
+  padding : 10px;
+  height : 300px;
+  width : 30%;
+} */
